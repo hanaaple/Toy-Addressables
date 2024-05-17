@@ -9,9 +9,9 @@ namespace Title.MVC_Download
         [SerializeField] private Button startButton;
         [SerializeField] private Button clearCacheButton;
         
-        public void Subscribe(UnityAction onStart, UnityAction onClearCache)
+        public void Subscribe(UnityAction onStartGamePlay, UnityAction onClearCache)
         {
-            startButton.onClick.AddListener(onStart);
+            startButton.onClick.AddListener(onStartGamePlay);
             clearCacheButton.onClick.AddListener(onClearCache);
         }
     }

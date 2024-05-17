@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace Title.MVC_Download
 {
+    /// <summary>
+    /// Clear Cache Yes/No 화면 View
+    /// </summary>
     public class ClearCachePopUpView : MonoBehaviour
     {
         [SerializeField] private Button clearCacheButton;
@@ -11,10 +14,10 @@ namespace Title.MVC_Download
         
         [SerializeField] private GameObject popupPanel;
 
-        public void Subscribe(UnityAction clearCall, UnityAction cancelCall)
+        public void Subscribe(UnityAction onStartClear, UnityAction onCancel)
         {
-            clearCacheButton.onClick.AddListener(clearCall);
-            cancelButton.onClick.AddListener(cancelCall);
+            clearCacheButton.onClick.AddListener(onStartClear);
+            cancelButton.onClick.AddListener(onCancel);
         }
 
         public void PopUp()

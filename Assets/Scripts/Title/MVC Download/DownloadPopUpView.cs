@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Title.MVC_Download
 {
+    /// <summary>
+    /// Download yes/no 화면 view
+    /// </summary>
     public class DownloadPopUpView : MonoBehaviour
     {
         [SerializeField] private Button downloadButton;
@@ -14,12 +17,10 @@ namespace Title.MVC_Download
         
         [SerializeField] private GameObject popupPanel;
 
-
-        // observer or delegate 사용
-        public void Subscribe(UnityAction downloadCall, UnityAction cancelCall)
+        public void Subscribe(UnityAction onStartDownload, UnityAction onCancel)
         {
-            downloadButton.onClick.AddListener(downloadCall);
-            cancelButton.onClick.AddListener(cancelCall);
+            downloadButton.onClick.AddListener(onStartDownload);
+            cancelButton.onClick.AddListener(onCancel);
         }
 
         public void UpdateView(DownloadSizeModel downloadSizeModel)
